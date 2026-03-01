@@ -1,0 +1,8 @@
+@use 'variables' as v;
+
+body {
+    width: 1460px;
+    padding: 0 10px;
+    background-color: v.$color-base;
+    margin-inline: auto;
+}

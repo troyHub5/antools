@@ -1,0 +1,219 @@
+@use 'variables' as v;
+@use 'functions' as *;
+@use 'sass:math';
+
+
+@mixin fluid-text($max: 48, $min: 16)  {
+    font-size: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+}
+
+@mixin fonts($font-family, $font-weigth, $font-style, $line-hight, $letter-spasing) {
+    font-family: $font-family;
+    font-weight: $font-weigth;
+    font-style: $font-style;
+    line-height: $line-hight;
+    letter-spacing: $letter-spasing;
+}
+
+@function rem($pixel) {
+    @return math.div($pixel, 16) * 1rem;
+}
+
+// Выпадающее меню (Dropdown)
+.header__dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border-radius: 4px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    
+    &.active {
+        max-height: 300px;
+        opacity: 1;
+    }
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+        background-color: #f0f0f0;
+    }
+    
+    &:first-child {
+        border-radius: 4px 4px 0 0;
+    }
+    
+    &:last-child {
+        border-radius: 0 0 4px 4px;
+    }
+}
+
+.container  {
+    max-width: 85%;
+    /*max-width: 1224px;*/
+    padding-top: rem(26);
+    /*padding-top: 26px;*/
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 58px;
+}
+
+.logo {
+    max-width: 150px;
+    height: 38px;
+    margin-right: 50px;
+}
+
+.logo__name {
+    font-family: 'Poppins';
+    font-weight: 600;
+    @include fluid-text(22, 20);
+    line-height: 1;
+    letter-spacing: 0;
+    color: v.$color-white;
+    display: inline-block;
+    padding-left: 12px;
+    padding-top: 6px;
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    gap: 33px;
+}
+
+.dropdown-btn {
+    @include fonts('Poppins', 500, normal, 1, 0);
+    @include fluid-text(16, 14);
+    color: v.$color-white55;
+}
+
+.link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    @include fluid-text(16, 14);
+    color: v.$color-white55;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.registration {
+    
+    &__login {
+        @include fonts('Poppins', 600, normal, 1, 0);
+        @include fluid-text(16, 14);
+        color: rgba(255, 255, 255, 0.78);
+        margin-right: 41px;
+    }
+
+    &__signup {
+        width: 118px;
+        height: 48px;
+        display: inline-block;
+        text-align: center;
+        background-color: v.$color-accent;
+        border-radius: 8px;
+        @include fonts('Poppins', 600, normal, 48px, 0 );
+        color: #FDF5FF;
+        @include fluid-text(16, 14);
+    }
+}
+
+.header__hero {
+    display: flex;
+    gap: 140px;
+
+    &--content {
+        padding-top: 46px;
+        margin-left: 111px;
+    }
+}
+
+.header__hero-title {
+    @include fonts('Poppins', 500, normal, 1.4, 0);
+    @include fluid-text(50, 45);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin-bottom: 30px;
+
+    span {
+        color: v.$color-accent;
+    }
+}
+
+.header__hero-subtitle {
+    @include fonts('Poppins', 400, normal, 1.7, 0);
+    @include fluid-text(18, 16);
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 490px;
+    margin-bottom: 60px;
+}
+
+.header__form {
+    width: 498px;
+    height: 64px;
+    background-color: #283036;
+    border-radius: 15px;
+    border: 1.5px solid;
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    margin-bottom: rem(110);
+}
+
+.tools {
+    padding-top: rem(200);
+    width: stretch;
+
+     &__content {
+        max-width: rem(455);
+        margin-inline: auto;
+     }
+}
+
+.tools__content-title {
+    text-align: center;
+    @include fonts('Poppins', 500, normal, 1.3, 0);
+    color: rgba(255, 255, 255, 0.9);
+    @include fluid-text(48, 44);
+    margin-bottom: rem(25);
+}
+
+.tools__content-subtitle {
+    text-align: center;
+    @include fonts('Poppins', 500, normal, 1.7, 0);
+    color: rgba(255, 255, 255, 0.55);
+    @include fluid-text(18, 16);
+    margin-bottom: rem(90);
+}
