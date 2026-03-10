@@ -1,8 +1,21 @@
 @use 'variables' as v;
 
+
+html,
+body {
+    height: 100%;
+}
+
+
 body {
     width: 1460px;
     padding: 0 10px;
-    background-color: v.$color-base;
+    background-color: v.$color-black;
     margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }

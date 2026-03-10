@@ -19,7 +19,6 @@
     @return math.div($pixel, 16) * 1rem;
 }
 
-// Выпадающее меню (Dropdown)
 .header__dropdown {
     position: relative;
     display: inline-block;
@@ -32,11 +31,24 @@
     font-size: 1rem;
     padding: 8px 12px;
     transition: all 0.3s ease;
+    @include fonts('Poppins', 500, normal, 1, 0);
+    @include fluid-text(16, 14);
+    color: v.$color-white55;
+
     
     &:hover {
         opacity: 0.8;
     }
 }
+
+.toggle-arrow {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
 
 .dropdown-menu {
     position: absolute;
@@ -81,9 +93,7 @@
 
 .container  {
     max-width: 85%;
-    /*max-width: 1224px;*/
     padding-top: rem(26);
-    /*padding-top: 26px;*/
     margin-inline: auto;
     display: flex;
     justify-content: space-between;
@@ -115,19 +125,36 @@
     gap: 33px;
 }
 
-.dropdown-btn {
-    @include fonts('Poppins', 500, normal, 1, 0);
-    @include fluid-text(16, 14);
-    color: v.$color-white55;
-}
 
 .link {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     @include fluid-text(16, 14);
     color: v.$color-white55;
-    line-height: 1;
+    line-height: 2;
     letter-spacing: 0;
+    position: relative;
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition-duration: 0.2s;
+    }
 }
 
 .registration {
@@ -150,6 +177,14 @@
         color: #FDF5FF;
         @include fluid-text(16, 14);
     }
+}
+
+.registration__login:hover {
+    opacity: 0.8;
+}
+
+.registration__signup:hover {
+    opacity: 0.8;
 }
 
 .header__hero {
@@ -183,17 +218,62 @@
 }
 
 .header__form {
-    width: 498px;
-    height: 64px;
+    position: relative;
+    width: rem(498);
+    height: rem(64);
+    padding: 8px 11px 8px 13px;
     background-color: #283036;
     border-radius: 15px;
-    border: 1.5px solid;
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     margin-bottom: rem(110);
+
+    label img {
+        padding-top: 10px;
+        margin-right: 10px;
+    }
 }
 
+.header__form::before {
+    content: '';
+    position: absolute;
+    top: -1.5px;
+    left: -1.5px;
+    right: -1.5px;
+    bottom: -1.5px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.hero__input {
+    height: stretch;
+    width: rem(300);
+}
+
+.hero__input::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+.header__form-btn {
+    width: rem(130);
+    height: stretch;
+    background-color: v.$color-accent;
+    border-radius: 8px;
+    color: v.$color-white;
+    @include fonts('Poppins', 600, normal, 1, 0);
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+.header__social-network {
+    display: flex;
+    gap: rem(12);
+}
 .tools {
     padding-top: rem(200);
+    padding-bottom: rem(100);
     width: stretch;
 
      &__content {
@@ -217,3 +297,100 @@
     @include fluid-text(18, 16);
     margin-bottom: rem(90);
 }
+
+.tools__card-galary {
+    width: 84%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: rem(100);
+    column-gap: rem(24);
+    margin-bottom: rem(100);
+}
+
+.tool__card {
+    padding-top: rem(53);
+    padding-left: rem(30);
+    padding-right: rem(30);
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+
+.tool__card:hover {
+    padding-top: 33px;
+    background-color: rgba(40, 48, 54, 0.6);
+    background-image: url(../images/bg/sketch.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+
+.card__top {
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+    margin-bottom: rem(31);
+}
+
+.text__box-title {
+    @include fonts('Poppins', 500, normal, 1, 0);
+    @include fluid-text(24, 20);
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: rem(3);
+}
+
+.text__box-properties {
+    @include fonts('Poppins', 400, normal, 1, 0);
+    @include fluid-text(18, 16);
+    color: rgba(255, 165, 55, 0.55);
+}
+
+.card__subtitle {
+    @include fonts('Poppins', 400, normal, 1.9, 0);
+    @include fluid-text(16, 14);
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: rem(30);
+}
+
+.card__interactive {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+}
+
+.visit {
+    display: block;
+    @include fonts('Poppins', 600, normal, 1, 0);
+    @include fluid-text(16, 14);
+    color: rgba(255, 255, 255, 0.55);
+    margin-left: rem(159);
+}
+
+.visit:active {
+    display: block;
+    width: rem(106);
+    height: rem(42);
+    background-color: v.$color-accent;
+    border-radius: 8px;
+    color: v.$color-white;
+    @include fonts('Poppins', 600, normal, 2.5, 0);
+    @include fluid-text(16, 14);
+    text-align: center;
+}
+
+.tools__btn {
+    display: block;
+    width: rem(184);
+    height: rem(64);
+    background-color: rgba(30, 37, 43, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-inline: auto;
+    @include fonts('Poppins', 500, normal, 1, 0);
+    color: rgba(255, 110, 48, 1);
+    @include fluid-text(20, 18);
+}
+        

@@ -25,3 +25,7 @@
         #{$maxSize * 1rem}
     );
 }
+
+@function vw($value, $base: 1440) {
+    @return $value / $base * 100vw;
+}

@@ -1,0 +1,302 @@
+@use 'variables' as v;
+@use 'functions' as *;
+@use 'sass:math';
+
+
+@mixin fluid-text($max: 48, $min: 16)  {
+    font-size: clamp(#{$min}px, #{math.div($max, 1440) * 100}vw, #{$max}px);
+}
+
+@mixin fonts($font-family, $font-weigth, $font-style, $line-hight, $letter-spasing) {
+    font-family: $font-family;
+    font-weight: $font-weigth;
+    font-style: $font-style;
+    line-height: $line-hight;
+    letter-spacing: $letter-spasing;
+}
+
+@function rem($pixel) {
+    @return math.div($pixel, 16) * 1rem;
+}
+
+.new {
+    width: stretch;
+    padding-top: rem(100);
+    padding-bottom: rem(100);
+
+    /*&__brand {
+        width: 85%;
+        height: rem(253);
+        padding: 55px 82px 55px 82px;
+        border-radius: 25px;
+        background-color: rgba(44, 53, 61, 0.2);
+        margin-inline: auto;
+        margin-bottom: rem(200);
+        position: relative;
+    }*/
+       
+
+    &__commers {
+        width: 85%;
+        margin-inline: auto;
+        display: flex;
+        
+    }
+}
+
+
+.new__brand {
+    width: 85%;
+    height: rem(253);
+    padding: 55px 82px 55px 82px;
+    background-image: url(../images/bg/bg-brand.png);
+    background-color: rgba(44, 53, 61, 0.2);
+    border-radius: rem(25);
+    margin-inline: auto;
+    margin-bottom: rem(200);
+}
+
+
+.new__brand-title {
+    text-align: center;
+    @include fonts('Poppins', 500, normal, 1, 0);
+    color: rgba(255, 255, 255, 0.8);
+    @include fluid-text(24, 22);
+    margin-bottom: rem(55);
+} 
+
+.brand > img:not(:last-child) {
+    margin-right: rem(100);
+}
+
+.new__commers-galary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(25);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: rem(50);
+}
+
+.new__commers-content {
+    padding-right: rem(100);
+    padding-top: rem(20);
+
+    h3 {
+        @include fonts('Poppins', 500, normal, 1.3, 0);
+        color: rgba(255, 255, 255, 0.9);
+        @include fluid-text(48, 44);
+        margin-bottom: 30px;
+    }
+
+    p {
+        @include fonts('Poppins', 500, normal, 1.6, 0);
+        color: rgba(255, 255, 255, 0.55);
+        @include fluid-text(18, 16);
+        margin-bottom: 60px;
+        max-width: rem(427);
+    }
+
+    a {
+        display: block;
+        width: rem(198);
+        height: rem(58);
+        background-color: rgba(255, 110, 48, 1);
+        border-radius: 8px;
+        color: v.$color-white;
+        text-align: center;
+        @include fonts('Poppins', 500, normal, 3.2, 0);
+        @include fluid-text(18, 16);
+    }
+}
+
+.galary__item-top {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.textbox__title {
+    @include fonts('Poppins', 500, normal, 1, 0);
+    color: rgba(255, 255, 255, 0.78);
+    @include fluid-text(24, 20);
+    margin-bottom: 3px;
+}
+
+.textbox__properties {
+    @include fonts('Poppins', 400, normal, 1, 0);
+    color: rgba(255, 165, 55, .55);
+    @include fluid-text(18, 16);
+}
+
+.new__commers-subtitle {
+    @include fonts('Poppins', 400, normal, 2.1, 0);
+    color: rgba(255, 255, 255, .55);
+    font-size: rem(14);
+    max-width: rem(245);
+    margin-bottom: 30px;
+}
+
+.galary__item {
+    padding-top: rem(38);
+    border-radius: rem(15);
+    padding-left: rem(22);
+    transition: all 0.2s ease;
+}
+
+.galary__item:hover {
+    padding-top: rem(28);
+    background-image: url(../images/php-mask.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    background-color: rgba(40, 48, 54, 0.6);
+}
+
+.new__commers-link {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+}
+
+.n__visit-link {
+    display: block;
+    @include fonts('Poppins', 600, normal, 1, 0);
+    @include fluid-text(16, 14);
+    color: rgba(255, 255, 255, 0.55);
+    margin-left: rem(50);
+}
+
+.n__visit-link:active {
+    display: block;
+    width: rem(106);
+    height: rem(42);
+    background-color: v.$color-accent;
+    border-radius: 8px;
+    color: v.$color-white;
+    @include fonts('Poppins', 600, normal, 2.5, 0);
+    @include fluid-text(16, 14);
+    text-align: center;
+    margin-left: rem(10);
+}
+
+.slider {
+    width: stretch;
+    height: rem(800);
+    padding-top: rem(100);
+
+    .swiper {
+        width: rem(1224);
+        margin-inline: auto;
+    }
+}
+
+.swiper-wrapper {
+    min-height: rem(600);
+}
+
+.swiper__slide {
+    margin-bottom: rem(50);
+}
+
+.slide1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content img {
+        position: absolute;
+        z-index: -1;
+    }
+    
+
+    &__content p {
+        max-width: rem(400);
+        padding-top: rem(59);
+        padding-left: rem(53);
+        @include fonts('Roboro', 400, normal, 2.1, 1.5%);
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 14px;
+    }
+}
+
+.form {
+    width: stretch;
+    padding-top: rem(125);
+    
+    &__content {
+        max-width: rem(560);
+        margin-inline: auto;
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+}
+
+.form__content-title {
+    text-align: center;
+    @include fonts('Poppis', 500, normal, 1.3, 0);
+    color: rgba(255, 255, 255, 0.9);
+    @include fluid-text(48, 42);
+    margin-bottom: rem(35);
+}
+
+.form__content-subtitle {
+    text-align: center;
+    @include fonts('Poppins', 500, normal, 1.7, 0);
+    color: rgba(255, 255, 255, 0.55);
+    @include fluid-text(18, 14);
+    margin-bottom: rem(100);
+}
+
+.footer__form {
+    position: relative;
+    width: rem(549);
+    height: rem(64);
+    margin-inline: auto;
+    padding: 8px 12px 8px 24px;
+    background-color: v.$color-search;
+    border-radius: rem(15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(240);
+
+    input::placeholder {
+        color: rgba(255, 255, 255, 0.38);
+    }
+}
+
+.footer__form::before {
+    content: '';
+    position: absolute;
+    top: -1.5px;
+    left: -1.5px;
+    right: -1.5px;
+    bottom: -1.5px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.footer__btn {
+    width: rem(130);
+    height: rem(48);
+    border-radius: 8px;
+    background-color: v.$color-accent;
+    @include fonts('Poppins', 600, normal, 1, 0);
+    color: v.$color-white;
+    @include fluid-text(16, 14);
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+
+
+

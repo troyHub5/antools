@@ -1,0 +1,134 @@
+@use 'variables' as v;
+@use 'functions' as f;
+@use 'mixin' as m;
+@use 'sass:math';
+
+@mixin fluid-text($max: 48, $min: 16)  {
+    font-size: clamp(#{$min}px, #{math.div($max, 1440) * 100}vw, #{$max}px);
+}
+
+@mixin fonts($font-family, $font-weigth, $font-style, $line-hight, $letter-spasing) {
+    font-family: $font-family;
+    font-weight: $font-weigth;
+    font-style: $font-style;
+    line-height: $line-hight;
+    letter-spacing: $letter-spasing;
+}
+
+@function rem($pixel) {
+    @return math.div($pixel, 16) * 1rem;
+}
+
+.footer {
+    width: stretch;
+    padding-top: rem(70);
+
+    &__inner {
+        max-width: rem(1220);
+        display: flex;
+        margin-inline: auto;
+        padding: 0 8px;
+    }
+}
+
+.copyright {
+    max-width: rem(260);
+    margin-right: rem(156);
+    
+    a {
+        display: inline-block;
+        margin-bottom: rem(25);
+    }
+
+    &__date {
+        @include fonts('Poppins', 500, normal, 1, 0);
+        color: rgba(255, 255, 255, 0.9);
+        @include fluid-text(16, 14);
+        margin-bottom: 21px;
+    }
+
+    &__description {
+        @include fonts('Poppins', 400, normal, 1.9, 0);
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 14px;
+    }
+}
+
+.footer__logo {
+    
+
+}
+
+.address {
+    margin-right: rem(115);
+
+    &__title {
+        @include fonts('Poppins', 500, normal, 1, 0);
+        color: rgba(255, 255, 255, 0.9);
+        @include fluid-text(20, 18);
+        margin-bottom: rem(20);
+    }
+}
+
+.address__tel {
+    display: inline-block;
+    @include fluid-text(16, 14);
+    @include fonts('Poppins', 500, normal, 1, 0);
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: rem(10);
+}
+
+.address__street {
+    @include fluid-text(16, 14);
+    @include fonts('Poppins', 500, normal, 1, 0);
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: rem(10);
+}
+
+.address__mail {
+    @include fluid-text(16, 14);
+    @include fonts('Poppins', 500, normal, 1, 0);
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.categories {
+    margin-right: rem(115);
+
+    &__title {
+        @include fonts('Poppins', 500, normal, 1, 0);
+        @include fluid-text(20, 18);
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 20px;
+    }
+}
+
+.categories__list-item:not(:last-child) {
+    margin-bottom: rem(10);
+}
+
+.categories__link {
+    @include fonts('Poppins', 500, normal, 1, 0);
+    @include fluid-text(16, 14);
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.development {
+
+    &__title {
+        @include fonts('Poppins', 500, normal, 1, 0);
+        @include fluid-text(20, 18);
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: rem(20);
+    }
+}
+
+.development__link {
+    @include fonts('Poppins', 500, normal, 1, 0);
+    @include fluid-text(16, 14);
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.development__list-item:not(:last-child) {
+    margin-bottom: rem(10);
+}
+

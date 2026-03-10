@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antools</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -21,12 +22,12 @@
                         <a class="link" href="#">Home</a>
                     </li>
                     <li class="header__dropdown">
-                        <button class="dropdown-btn">Categories ▼</button>
+                        <button class="dropdown-btn" type="button">Categories
+                            <img class="toggle-arrow" src="images/icons/chevron-down.svg" alt="arrow">
+                        </button>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Веб-дизайн</a>
-                            <a href="#" class="dropdown-item">Разработка</a>
-                            <a href="#" class="dropdown-item">Мобильные приложения</a>
-                            <a href="#" class="dropdown-item">Аналитика</a>
+                            <a href="#" class="dropdown-item">Design</a>
+                            <a href="#" class="dropdown-item">Development</a>
                         </div>
                     </li>
                     <li class="menu__item">
@@ -50,8 +51,8 @@
                 <form class="header__form" action="" method="get">
                     <label for="name">
                         <img src="images/icons/search.svg" alt="search">
-                        <input type="text" id="name" placeholder="find more than 430+ tools...">
-                        <button>Search</button>
+                        <input class="hero__input" type="text" id="name" placeholder="find more than 430+ tools...">
+                        <button class="header__form-btn">Search</button>
                     </label>
                 </form>
                 <div class="header__social-network">
@@ -79,31 +80,304 @@
             </div>
             <div class="tools__card-galary">
                 <div class="tool__card">
-                    <div>
-                        <img src="images/card/grommet-icons_figma (1).png" alt="figma icon">
-                        <div>
-                            <h3>FIGMA</h3>
-                            <p>Free</p>
+                    <div class="card__top">
+                        <img src="images/card/grommet-icons_figma (1).png" alt="figma icon" width="64" height="64" loading="lazy">
+                        <div class="text__box">
+                            <h3 class="text__box-title">FIGMA</h3>
+                            <p class="text__box-properties">Free</p>
                         </div>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div>
-                        <img src="images/icons/like.svg" alt="like icon">
-                        <img src="images/icons/file.svg" alt="file icon">
-                        <a href="#">visit</a>
+                    <p class="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="card__interactive">
+                        <button id="likeoff"><img id="filledHeart" src="images/icons/like.svg" alt="like icon" width="42" height="42"></button>
+                        <a href="#"><img src="images/icons/file.svg" alt="file icon" width="42" height="42"></a>
+                        <a class="visit" href="#">visit</a>
                     </div>
                 </div>
                 <div class="tool__card">
-                    <div></div>
+                    <div class="card__top">
+                        <img src="images/card/logos_sketch.png" alt="sketch icon" width="64" height="57" loading="lazy">
+                        <div class="text__box">
+                            <h3 class="text__box-title">Sketch</h3>
+                            <p class="text__box-properties">Trial & Paid</p>
+                        </div>
+                    </div>
+                    <p class="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="card__interactive">
+                        <button id="likeoff">
+                            <img id="filledHeart" src="images/icons/like.svg" alt="like icon" width="42" height="42"></button>
+                        <a href="#">
+                            <img src="images/icons/file.svg" alt="file icon" width="42" height="42">
+                        </a>
+                        <a class="visit" href="#">visit</a>
+                    </div>
                 </div>
-                <div class="tool__card"></div>
-                <div class="tool__card"></div>
-                <div></div>
-                <div></div>
+                <div class="tool__card">
+                    <div class="card__top">
+                        <img src="images/card/logos_visual-studio-code.png" alt="vs code icon" width="65" height="62" loading="lazy">
+                        <div class="text__box">
+                            <h3 class="text__box-title">Visual Studio Code</h3>
+                            <p class="text__box-properties">Free</p>
+                        </div>
+                    </div>
+                    <p class="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="card__interactive">
+                        <button class="likeoff" type="button"><img class="filledHeard" src="images/icons/like.svg" alt="like icon" width="42" height="42"></button>
+                        <a href="#"><img src="images/icons/file.svg" alt="file icon" width="42" height="42"></a>
+                        <a class="visit" href="#">visit</a>
+                    </div>
+                </div>
+                <div class="tool__card">
+                    <div class="card__top">
+                        <img src="images/card/nicon.png" alt="nicon icon" width="64" height="64" loading="lazy">
+                        <div class="text__box">
+                            <h3 class="text__box-title">Notion</h3>
+                            <p class="text__box-properties">Free & Paid</p>
+                        </div>
+                    </div>
+                    <p class="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="card__interactive">
+                        <button class="likeoff"><img class="filledHeart" src="images/icons/like.svg" alt="like icon" width="42" height="42"></button>
+                        <a href="#"><img src="images/icons/file.svg" alt="file icon" width="42" height="42"></a>
+                        <a class="visit" href="#">visit</a>
+                    </div>
+                </div>
+                <div class="tool__card">
+                    <div class="card__top">
+                        <img src="images/card/grommet-icons_slack.png" alt="slack icon" width="64" height="64" loading="lazy">
+                        <div class="text__box">
+                            <h3 class="text__box-title">Slack</h3>
+                            <p class="text__box-properties">Free & Paid</p>
+                        </div>
+                    </div>
+                    <p class="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="card__interactive">
+                        <button class="likeoff"><img class="filledHeart" src="images/icons/like.svg" alt="like icon"></button>
+                        <a href="#"><img src="images/icons/file.svg" alt="like icon"></a>
+                        <a class="visit" href="#">visit</a>
+                    </div>
+                </div>
+                <div class="tool__card">
+                    <div class="card__top">
+                        <img src="images/card/logos_invision-icon.png" alt="invision icon">
+                        <div class="text__box">
+                            <h3 class="text__box-title">Invision</h3>
+                            <p class="text__box-properties">Free & Paid</p>
+                        </div>
+                    </div>
+                    <p class="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="card__interactive">
+                        <button class="likeoff"><img class="filledHeart" src="images/icons/like.svg" alt="like icon"></button>
+                        <a href="#"><img src="images/icons/file.svg" alt="like icon"></a>
+                        <a class="visit" href="#">visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="tools__btn">Load more</button>
+        </section>
+        <section class="new">
+            <div class="new__brand">
+                <p class="new__brand-title">Trusted more than 150+ brand</p>
+                <div class="brand">
+                    <img src="images/icons/logos_microsoft.svg" alt="microsoft label" width="193" height="42">
+                    <img src="images/icons/logos_google.svg" alt="google label" width="157" height="51">
+                    <img src="images/icons/logos_slack.svg" alt="slack label" width="194" height="49">
+                    <img src="images/icons/logos_wordpress.svg" alt="wordpress label" width="194" height="44">
+                </div>
+            </div>
+               
+            <div class="new__commers">
+                <div class="new__commers-content">
+                    <h3 class="new__commers-title">Newcomer Tools</h3>
+                    <p>Wow! see the latest update of the most recommended tools from reliable designers and developers</p>
+                    <a href="#">Explore more</a>
+                </div>
+                <div class="new__commers-galary">
+                    <div class="galary__item">
+                        <div class="galary__item-top">
+                            <img src="images/card2/zeplin.png" alt="zeplin icon" width="64" height="64">
+                            <div class="item__textbox">
+                                <h4 class="textbox__title">Zeplin</h4>
+                                <p class="textbox__properties">Free & Paid</p>
+                            </div>
+                        </div>
+                        <p class="new__commers-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="new__commers-link">
+                            <a class="n__like-link" href="#">
+                                <img src="images/icons/like.svg" alt="like icon" width="42" height="42">
+                            </a>
+                            <a class="n__file-link" href="#">
+                                <img src="images/icons/file.svg" alt="file icon" width="42" height="42">
+                            </a>
+                            <a class="n__visit-link" href="#">visit</a>
+                        </div>
+                    </div>
+                    
+                    <div class="galary__item">
+                        <div class="galary__item-top">
+                            <img src="images/card2/jb_phpstorm.png" alt="php icon" width="64" height="64">
+                            <div class="item__textbox">
+                                <h4 class="textbox__title">PHPStorm</h4>
+                                <p class="textbox__properties">Free</p>
+                            </div>
+                        </div>
+                        <p class="new__commers-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="new__commers-link">
+                            <a class="n__like-link" href="#">
+                                <img src="images/icons/like.svg" alt="like icon" width="42" height="42">
+                            </a>
+                            <a class="n__file-link" href="#">
+                                <img src="images/icons/file.svg" alt="file icon" width="42" height="42">
+                            </a>
+                            <a class="n__visit-link" href="#">visit</a>
+                        </div>
+                    </div>
+                    <div class="galary__item">
+                        <div class="galary__item-top">
+                            <img src="images/card2/jb_toolbox_app.png" alt="toolbox">
+                            <div class="item__textbox">
+                                <h4 class="textbox__title">Toolbox</h4>
+                                <p class="textbox__properties">Free</p>
+                            </div>
+                        </div>
+                        <p class="new__commers-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="new__commers-link">
+                            <a class="n__like-link" href="#">
+                                <img src="images/icons/like.svg" alt="like icon">
+                            </a>
+                            <a class="n__file-link" href="#">
+                                <img src="images/icons/file.svg" alt="file icon">
+                            </a>
+                            <a class="n__visit-link" href="#">visit</a>
+                        </div>
+                    </div>
+                    <div class="galary__item">
+                        <div class="galary__item-top">
+                            <img src="images/card2/procreate.png" alt="procreate">
+                            <div class="item__textbox">
+                                <h4 class="textbox__title">Procreate</h4>
+                                <p class="textbox__properties">Paid</p>
+                            </div>
+                        </div>
+                        <p class="new__commers-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="new__commers-link">
+                            <a class="n__like-link" href="#">
+                                <img src="images/icons/like.svg" alt="like icon">
+                            </a>
+                            <a class="n__file-link" href="#">
+                                <img src="images/icons/file.svg" alt="file icon">
+                            </a>
+                            <a class="n__visit-link" href="">visit</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        <section class="slider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                  
+                    <div class="swiper-slide">
+                        <div class="slide1">
+                            <div class="slide1__group">
+                                <img src="images/ronald.png" alt="ronald">
+                            </div>
+                            <div class="slide1__content">
+                                <img src="images/bg/bgs.svg" alt="background quotes">
+                                <p>Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide1">
+                            <div class="slide1__group">
+                                <img src="images/ronald.png" alt="ronald">
+                            </div>
+                            <div class="slide1__content">
+                                <img src="images/bg/bgs.svg" alt="background quotes">
+                                <p>Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide1">
+                            <div class="slide1__group">
+                                <img src="images/ronald.png" alt="ronald">
+                            </div>
+                            <div class="slide1__content">
+                                <img src="images/bg/bgs.svg" alt="background quotes">
+                                <p>Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                
+                <div class="swiper-pagination"></div>
+              
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              
+            </div>
+        </section>
+        <section class="form">
+            <div class="form__content">
+                <h4 class="form__content-title">Become a contributor?</h4>
+                <p class="form__content-subtitle">Join us and get tips & tricks to become a great Designer and Developer</p>
+                <form class="footer__form" action="#" metod="post">
+                    <input class="footer__input" type="text" placeholder="enter your email..">
+                    <button class="footer__btn" type="button">Join us</button>
+                </form>
+            </div>
+            <hr class="bottom-line">
+        </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="copyright">
+                <a class="footer__logo" href="#">
+                    <img src="images/icons/header-logo.svg" alt="logo">
+                    <span class="logo__name">antools.</span>
+                </a>
+                <p class="copyright__date">Copyright 2021. Antools</p>
+                <p class="copyright__description">Antool is a web collection of information on paid or free Design and Development tools</p>
+            </div>
+            <div class="address">
+                <p class="address__title">Contact Us</p>
+                <address>
+                    <a class="address__tel" href="tel:+621987463">+621987463</a>
+                    <p class="address__street">M Building, No.10 A</p>
+                    <a class="address__mail" href="mailto:antools@awesome.com">antools@awesome.com</a>
+                </address>
+            </div>
+            <div class="categories">
+                <p class="categories__title">Categories</p>
+                <ul class="categories__list">
+                    <li class="categories__list-item">
+                        <a class="categories__link" href="#">Design</a>
+                    </li>
+                    <li class="categories__list-item">
+                        <a class="categories__link" href="#">Development</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="development">
+                <p class="development__title">Company info</p>
+                <ul class="development__list">
+                    <li class="developer__list-item">
+                        <a class="development__link" href="#">About Us</a>
+                    </li>
+                    <li class="development__list-item">
+                        <a class="development__link" href="#">Our Partners</a>
+                    </li>
+                    <li class="development__list-item">
+                        <a class="developrment__link" href="#">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>

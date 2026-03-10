@@ -23,3 +23,34 @@ dropdownItems.forEach(item => {
         dropdownMenu.classList.remove('active');
     });
 });
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+ 
+});
+
+const likeOff = document.getElementById('likeoff');
+const filledHeart = document.getElementById('filledHeart');
+
+likeOff.addEventListener('click', () => {
+
+    if(filledHeart.src.includes('images/icons/like.svg')) {
+        filledHeart.src = 'images/icons/redlike.svg'; 
+        } else {
+            filledHeart.src = 'images/icons/like.svg';
+        }
+    });
