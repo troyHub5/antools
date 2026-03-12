@@ -21,13 +21,14 @@
 
 .footer {
     width: stretch;
-    padding-top: rem(70);
+    padding-top: rem(83);
 
     &__inner {
         max-width: rem(1220);
         display: flex;
         margin-inline: auto;
         padding: 0 8px;
+        margin-bottom: rem(98);
     }
 }
 
@@ -54,10 +55,6 @@
     }
 }
 
-.footer__logo {
-    
-
-}
 
 .address {
     margin-right: rem(115);
@@ -66,7 +63,7 @@
         @include fonts('Poppins', 500, normal, 1, 0);
         color: rgba(255, 255, 255, 0.9);
         @include fluid-text(20, 18);
-        margin-bottom: rem(20);
+        margin-bottom: rem(30);
     }
 }
 
@@ -75,14 +72,14 @@
     @include fluid-text(16, 14);
     @include fonts('Poppins', 500, normal, 1, 0);
     color: rgba(255, 255, 255, 0.55);
-    margin-bottom: rem(10);
+    margin-bottom: rem(20);
 }
 
 .address__street {
     @include fluid-text(16, 14);
     @include fonts('Poppins', 500, normal, 1, 0);
     color: rgba(255, 255, 255, 0.55);
-    margin-bottom: rem(10);
+    margin-bottom: rem(20);
 }
 
 .address__mail {
@@ -98,12 +95,12 @@
         @include fonts('Poppins', 500, normal, 1, 0);
         @include fluid-text(20, 18);
         color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 }
 
 .categories__list-item:not(:last-child) {
-    margin-bottom: rem(10);
+    margin-bottom: rem(20);
 }
 
 .categories__link {
@@ -118,7 +115,7 @@
         @include fonts('Poppins', 500, normal, 1, 0);
         @include fluid-text(20, 18);
         color: rgba(255, 255, 255, 0.9);
-        margin-bottom: rem(20);
+        margin-bottom: rem(30);
     }
 }
 
@@ -129,6 +126,6 @@
 }
 
 .development__list-item:not(:last-child) {
-    margin-bottom: rem(10);
+    margin-bottom: rem(30);
 }
 

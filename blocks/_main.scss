@@ -23,19 +23,7 @@
     width: stretch;
     padding-top: rem(100);
     padding-bottom: rem(100);
-
-    /*&__brand {
-        width: 85%;
-        height: rem(253);
-        padding: 55px 82px 55px 82px;
-        border-radius: 25px;
-        background-color: rgba(44, 53, 61, 0.2);
-        margin-inline: auto;
-        margin-bottom: rem(200);
-        position: relative;
-    }*/
-       
-
+          
     &__commers {
         width: 85%;
         margin-inline: auto;
@@ -48,7 +36,7 @@
 .new__brand {
     width: 85%;
     height: rem(253);
-    padding: 55px 82px 55px 82px;
+    padding: 65px 82px 55px 82px;
     background-image: url(../images/bg/bg-brand.png);
     background-color: rgba(44, 53, 61, 0.2);
     border-radius: rem(25);
@@ -62,24 +50,25 @@
     @include fonts('Poppins', 500, normal, 1, 0);
     color: rgba(255, 255, 255, 0.8);
     @include fluid-text(24, 22);
-    margin-bottom: rem(55);
+    margin-bottom: rem(60);
 } 
 
 .brand > img:not(:last-child) {
-    margin-right: rem(100);
+    margin-right: rem(101);
 }
 
 .new__commers-galary {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: rem(25);
+    column-gap: rem(65);
     grid-template-rows: repeat(2, 1fr);
-    row-gap: rem(50);
+    row-gap: rem(60);
+    padding-left: rem(100);
 }
 
 .new__commers-content {
     padding-right: rem(100);
-    padding-top: rem(20);
+    padding-top: rem(35);
 
     h3 {
         @include fonts('Poppins', 500, normal, 1.3, 0);
@@ -92,7 +81,7 @@
         @include fonts('Poppins', 500, normal, 1.6, 0);
         color: rgba(255, 255, 255, 0.55);
         @include fluid-text(18, 16);
-        margin-bottom: 60px;
+        margin-bottom: rem(65);
         max-width: rem(427);
     }
 
@@ -120,7 +109,7 @@
     @include fonts('Poppins', 500, normal, 1, 0);
     color: rgba(255, 255, 255, 0.78);
     @include fluid-text(24, 20);
-    margin-bottom: 3px;
+    margin-bottom: rem(12);
 }
 
 .textbox__properties {
@@ -138,14 +127,14 @@
 }
 
 .galary__item {
-    padding-top: rem(38);
+    padding-top: rem(58);
     border-radius: rem(15);
     padding-left: rem(22);
     transition: all 0.2s ease;
 }
 
 .galary__item:hover {
-    padding-top: rem(28);
+    padding-top: rem(38);
     background-image: url(../images/php-mask.png);
     background-size: cover;
     background-position: center;
@@ -192,7 +181,7 @@
 }
 
 .swiper-wrapper {
-    min-height: rem(600);
+    min-height: rem(660);
 }
 
 .swiper__slide {
@@ -222,7 +211,7 @@
 
 .form {
     width: stretch;
-    padding-top: rem(125);
+    padding-top: rem(200);
     
     &__content {
         max-width: rem(560);
